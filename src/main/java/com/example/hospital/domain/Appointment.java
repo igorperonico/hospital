@@ -1,5 +1,6 @@
 package com.example.hospital.domain;
 
+import com.example.hospital.domain.dtos.AppointmentRequestDTO;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -29,4 +30,10 @@ public class Appointment {
 
     private String reason;
 
+    public Appointment(AppointmentRequestDTO body) {
+        this.appointmentDate = body.appointmentDate();
+        this.patientName = body.patientName();
+        this.doctorName = body.doctorName();
+        this.reason = body.reason();
+    }
 }
