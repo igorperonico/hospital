@@ -1,4 +1,4 @@
-package com.example.hospital.infra;
+package com.example.hospital.infra.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;

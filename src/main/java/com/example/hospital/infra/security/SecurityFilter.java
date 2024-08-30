@@ -1,4 +1,4 @@
-package com.example.hospital.infra;
+package com.example.hospital.infra.security;
 
 import com.example.hospital.repositories.UserRepository;
 import jakarta.servlet.FilterChain;
