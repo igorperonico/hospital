@@ -26,6 +26,14 @@ public class AppointmentController {
         return ResponseEntity.ok().build();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity getAppointmentById(@PathVariable String id) {
+        return this.appointmentRepository.findById(id)
+                .map(AppointmentResponseDTO::new)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
     @GetMapping
     public ResponseEntity getAllAppointments() {
         List<AppointmentResponseDTO> appointmentList = this.appointmentRepository.findAll().stream().map(AppointmentResponseDTO::new).toList();
